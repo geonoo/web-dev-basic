@@ -11,3 +11,7 @@
 1. JQuery
 2. AJAX
 ----------------
+### 3주차
+1. Python 기초
+2. Python 크롤링
+3. mongoDB
