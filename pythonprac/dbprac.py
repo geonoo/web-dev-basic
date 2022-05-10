@@ -1,9 +1,6 @@
 from pymongo import MongoClient
-import certifi
 
-ca = certifi.where()
-
-client = MongoClient('mongodb+srv://test:test@cluster0.lommb.mongodb.net/Cluster0?retryWrites=true&w=majority', tlsCAFile=ca)
+client = MongoClient('mongodb+srv://test:test@cluster0.lommb.mongodb.net/Cluster0?retryWrites=true&w=majority')
 db = client.dbsparta
 
 # 저장 - 예시
@@ -14,7 +11,8 @@ db = client.dbsparta
 # user = db.users.find_one({'name':'trump'})
 
 # 여러개 찾기 - 예시 ( _id 값은 제외하고 출력)
-# all_users = list(db.users.find({},{'_id':False}))
+all_users = list(db.users.find({},{'_id':False}))
+print(all_users)
 
 # 바꾸기 - 예시
 # db.users.update_one({'name':'bobby'},{'$set':{'age':19}})
